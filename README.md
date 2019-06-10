@@ -1,2 +1,3 @@
 # fcitx-rime-flypy
-小鹤音形的 fcitx-rime 配置
+
+小鹤音形 rime 的挂接文件。
