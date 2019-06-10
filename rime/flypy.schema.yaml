@@ -16,13 +16,13 @@ punctuator:
 switches:
   - name: ascii_mode
    # states: [ 中文, 英文 ]
-    reset: 0
+    reset: 1
   - name: full_shape
    # states: [ 半角, 全角 ]
     reset: 0
   - name: simplification
    # states: [ 简, 繁 ]
-    reset: 0
+    reset: 1
   - name: ascii_punct
    # states: [ 。，, ．， ]
     reset: 0
