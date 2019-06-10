@@ -3,7 +3,7 @@
 ![License-MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Docs-Passing](https://img.shields.io/badge/Docs-Passing-green.svg)
 
-小鹤音形 rime 的挂接文件。
+小鹤音形的 fcitx-rime 挂接文件。
 
 虽然小鹤音形官方提供了适用于 Linux 的 rime 挂接文件，
 但是挂接文件并没有遵守 Linux 约定俗成的配置风格
@@ -25,6 +25,9 @@
 + ``git clone --depth=1 https://github.com/Cool-Pan/fcitx-rime-flypy``
 + ``cd fcitx-rime-flypy``
 + ``bash Restore.sh``
+
+**注意：**
+可能仅适用于 fcitx-rime。
 
 ## 许可证
 
