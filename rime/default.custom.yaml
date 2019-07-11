@@ -4,7 +4,7 @@
 patch:
   schema_list:
     - schema: flypyplus
-    - schema: flypy
+    # - schema: flypy
 
   switcher:
     caption: 〔方案选择〕
@@ -63,7 +63,7 @@ patch:
       - { when: always, accept: Control+Shift+numbersign, toggle: full_shape }
       - { when: always, accept: Control+Shift+dollar, toggle: simplification }
       - { when: always, accept: Control+Shift+percent, toggle: extended_charset }
-      - { when: always, accept: Shift+space, toggle: full_shape }
+      # - { when: always, accept: Shift+space, toggle: full_shape }
       - { when: always, accept: Control+period, toggle: ascii_punct }
       # Others
       - { when: composing, accept: Caps_Lock, send: Escape }
@@ -81,6 +81,8 @@ patch:
       Control_L: noop
       Control_R: noop
       Eisu_toggle: clear
-      Shift_L: inline_ascii # 有编码时清除编码并进入英文状态
-      #Shift_L: commit_code # 有编码时上屏英文并转英文状态
-      Shift_R: commit_text
+      # Shift_L: inline_ascii # 有编码时清除编码并进入英文状态
+      # Shift_L: commit_code # 有编码时上屏英文并转英文状态
+      Shift_L: noop
+      # Shift_R: commit_text
+      Shift_R: noop
