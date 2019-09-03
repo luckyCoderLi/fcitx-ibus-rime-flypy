@@ -22,14 +22,14 @@ switches:
     reset: 0
   - name: simplification
     # states: [ 简, 繁 ]
-    reset: 0
+    reset: 1
   - name: ascii_punct
     # states: [ 。，, ．， ]
     reset: 0
 
 engine:
   processors:
-    - ascii_composer
+    # - ascii_composer
     - recognizer
     - key_binder
     - speller
@@ -147,7 +147,7 @@ key_binder:
 recognizer:
   import_preset: default
   patterns:
-    #uppercase: "[A-Z][-_+.'0-9A-Za-z]*$"
+    # uppercase: "[A-Z][-_+.'0-9A-Za-z]*$"
     uppercase: "" # 中文状态大写锁定直接上屏
     reverse_lookup: "[a-z`]*`+[a-z`]*"
     punct: ""
@@ -156,5 +156,5 @@ menu:
   page_size: 5 # 候选项数
 
 style:
-  horizontal: true # 竖排为false
+  horizontal: true # 竖排为 false
 

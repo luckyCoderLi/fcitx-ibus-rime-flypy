@@ -22,7 +22,7 @@ switches:
     reset: 0
   - name: simplification
     # states: [ 简, 繁 ]
-    reset: 0
+    reset: 1
   - name: ascii_punct
     # states: [ 。，, ．， ]
     reset: 0
