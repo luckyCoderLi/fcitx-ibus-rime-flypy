@@ -4,7 +4,7 @@
 schema:
   schema_id: flypyplus
   name: 小鹤音形+
-  version: "9.6"
+  version: "9.7"
   author:
     - 方案设计：何海峰 <flypy@qq.com>
   description: |
@@ -15,21 +15,21 @@ punctuator:
 
 switches:
   - name: ascii_mode
-   # states: [ 中文, 英文 ]
+    # states: [ 中文, 英文 ]
     reset: 0
   - name: full_shape
-   # states: [ 半角, 全角 ]
+    # states: [ 半角, 全角 ]
     reset: 0
   - name: simplification
-   # states: [ 简, 繁 ]
-    reset: 1
+    # states: [ 简, 繁 ]
+    reset: 0
   - name: ascii_punct
-   # states: [ 。，, ．， ]
+    # states: [ 。，, ．， ]
     reset: 0
 
 engine:
   processors:
-    # - ascii_composer
+    - ascii_composer
     - recognizer
     - key_binder
     - speller
@@ -46,6 +46,8 @@ engine:
   translators:
     - punct_translator
     - table_translator
+    - lua_translator@date_translator
+    - lua_translator@time_translator
     - table_translator@custom_phraseXT
     - table_translator@custom_phraseVD
     - table_translator@custom_phraseYH
@@ -125,35 +127,34 @@ key_binder:
     - {accept: period, send: period, when: has_menu} # 注销句号翻页
     - {accept: semicolon, send: 2, when: has_menu} # 分号次选
     # - {accept: Release+semicolon, send: semicolon, when: has_menu} # 如要使用分号引导符号功能，并双击上屏分号，需注销此行
-    - {accept: period, send: 2, when: has_menu} # 句号次选，已用下面内容替代
-    # - {accept:  dollar, send: 2, when: composing}
+    # - {accept: period, send: 2, when: has_menu} # 句号次选，已用下面内容替代
+    - {accept:  dollar, send: 2, when: composing}
     - {accept: Release+dollar, send: period, when: composing}
     - {accept: Release+period, send: period, when: composing}
-    - {accept: comma, send: 2, when: has_menu} # 逗号次选
-    # - {accept: bar, send: 2, when: composing}
+    # - {accept: comma, send: 2, when: has_menu} # 逗号次选
+    - {accept: bar, send: 2, when: composing}
     - {accept: Release+bar, send: comma, when: composing}
     - {accept: Release+comma, send: comma, when: composing}
 
     - {accept: "Tab", send: Escape, when: composing}
     - {accept: "Caps_Lock", send: Escape, when: composing} 
-    # - {accept: "Shift_R", send: Escape, when: composing}
-    # - {accept: "Shift_L", send: Escape, when: composing}
-    # - {accept: "Shift+space", toggle: full_shape, when: always} # 切换全半角
+    - {accept: "Shift_R", send: Escape, when: composing}
+    - {accept: "Shift+space", toggle: full_shape, when: always} # 切换全半角
     # - {accept: "Control+j", toggle: simplification, when: always} # 切换简繁
-    - {accept: "Control+period", toggle: simplification, when: always} # 切换简繁
-    # - {accept: "Control+period", toggle: ascii_punct, when: always} # 切换中英标点
+    - {accept: "Control+period", toggle: ascii_punct, when: always} # 切换中英标点
     # - {accept: "Control+m", select: .next, when: always} # 切换方案
 
 recognizer:
   import_preset: default
   patterns:
-    # uppercase: "[A-Z][-_+.'0-9A-Za-z]*$"
+    #uppercase: "[A-Z][-_+.'0-9A-Za-z]*$"
     uppercase: "" # 中文状态大写锁定直接上屏
     reverse_lookup: "[a-z`]*`+[a-z`]*"
     punct: ""
 
 menu:
   page_size: 5 # 候选项数
-  
+
 style:
   horizontal: true # 竖排为false
+
