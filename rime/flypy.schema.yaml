@@ -128,7 +128,7 @@ key_binder:
     - {accept: semicolon, send: 2, when: has_menu} # 分号次选
     # - {accept: Release+semicolon, send: semicolon, when: has_menu} # 如要使用分号引导符号功能，并双击上屏分号，需注销此行
     # - {accept: period, send: 2, when: has_menu} # 句号次选，已用下面内容替代
-    - {accept:  dollar, send: 2, when: composing}
+    - {accept: dollar, send: 2, when: composing}
     - {accept: Release+dollar, send: period, when: composing}
     - {accept: Release+period, send: period, when: composing}
     # - {accept: comma, send: 2, when: has_menu} # 逗号次选

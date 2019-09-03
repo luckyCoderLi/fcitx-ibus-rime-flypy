@@ -14,4 +14,4 @@ rm -rf "$HOME/.config/fcitx/rime"
 cp -rf "rime" "$HOME/.config/fcitx/"
 
 # 重新启动 fcitx
-fcitx -d >/dev/null 2>&1
+# fcitx -d >/dev/null 2>&1
