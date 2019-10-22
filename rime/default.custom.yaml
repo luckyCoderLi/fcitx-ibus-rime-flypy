@@ -98,7 +98,7 @@ patch:
 
   key_binder:
     bindings:
-      # Emacs style
+    # Emacs style
       - { when: composing, accept: "Control+p", send: Up }
       - { when: composing, accept: "Control+n", send: Down }
       - { when: composing, accept: "Control+b", send: Left }
@@ -112,16 +112,16 @@ patch:
       - { when: composing, accept: "Control+bracketleft", send: Escape }
       - { when: composing, accept: "Alt+v", send: Page_Up }
       - { when: composing, accept: "Control+v", send: Page_Down }
-      # move by word
+    # Move by word
       - { when: composing, accept: ISO_Left_Tab, send: Page_Up }
       - { when: composing, accept: "Shift+Tab", send: Page_Up }
       - { when: composing, accept: Tab, send: Page_Down }
-      # flip page
+    # Flip page
       - { when: has_menu, accept: minus, send: Page_Up }
       - { when: has_menu, accept: equal, send: Page_Down }
       - { when: paging, accept: comma, send: Page_Up }
       - { when: has_menu, accept: period, send: Page_Down }
-      # hotkey switch
+    # Hotkey switch
       - { when: always, accept: "Control+Shift+1", select: .next }
       - { when: always, accept: "Control+Shift+2", toggle: ascii_mode }
       - { when: always, accept: "Control+Shift+3", toggle: full_shape }
@@ -134,7 +134,7 @@ patch:
       - { when: always, accept: "Control+Shift+percent", toggle: extended_charset }
       # - { when: always, accept: "Shift+space", toggle: full_shape }
       - { when: always, accept: "Control+period", toggle: ascii_punct }
-      # Others
+    # Others
       - { when: composing, accept: "Caps_Lock", send: Escape }
 
   recognizer:
@@ -152,8 +152,11 @@ patch:
       Eisu_toggle: clear
       # Shift_L: inline_ascii # 有编码时清除编码并进入英文状态
       # Shift_L: commit_code # 有编码时上屏英文并转英文状态
+      # Shift_L: commit_text
+      # Shift_L: Shift_R
       Shift_L: noop
-      # Shift_R: inline_ascii
+      # Shift_R: inline_ascii # 有编码时清除编码并进入英文状态
+      # Shift_R: commit_text # 有编码时上屏英文并转英文状态
       # Shift_R: commit_text
+      # Shift_R: Shift_L
       Shift_R: noop
-

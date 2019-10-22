@@ -64,7 +64,7 @@ speller:
   finals: '/'
   # delimiter: " '"
   max_code_length: 4
-  auto_select: true   # 顶字上屏
+  auto_select: true # 顶字上屏
   auto_select_pattern: ^;.$|^\w{4}$
   auto_clear: max_length # manual|auto|max_length 空码按下一键确认清屏|空码自动清|达到最长码时后码顶上清屏
 
@@ -121,28 +121,28 @@ reverse_lookup:
 key_binder:
   import_preset: default # 方案切换相关
   bindings:
-    - {accept: bracketleft, send: Page_Up, when: paging} # [上翻页
-    - {accept: bracketright, send: Page_Down, when: has_menu} # ]下翻页
-    - {accept: comma, send: comma, when: paging} # 注销逗号翻页
-    - {accept: period, send: period, when: has_menu} # 注销句号翻页
-    - {accept: semicolon, send: 2, when: has_menu} # 分号次选
-    # - {accept: Release+semicolon, send: semicolon, when: has_menu} # 如要使用分号引导符号功能，并双击上屏分号，需注销此行
-    # - {accept: period, send: 2, when: has_menu} # 句号次选，已用下面内容替代
-    - {accept: dollar, send: 2, when: composing}
-    - {accept: Release+dollar, send: period, when: composing}
-    - {accept: Release+period, send: period, when: composing}
-    # - {accept: comma, send: 2, when: has_menu} # 逗号次选
-    - {accept: bar, send: 2, when: composing}
-    - {accept: Release+bar, send: comma, when: composing}
-    - {accept: Release+comma, send: comma, when: composing}
+    - { accept: bracketleft, send: Page_Up, when: paging } # [ 上翻页
+    - { accept: bracketright, send: Page_Down, when: has_menu } # ] 下翻页
+    - { accept: comma, send: comma, when: paging } # 注销逗号翻页
+    - { accept: period, send: period, when: has_menu } # 注销句号翻页
+    - { accept: semicolon, send: 2, when: has_menu } # 分号次选
+    # - { accept: Release+semicolon, send: semicolon, when: has_menu } # 如要使用分号引导符号功能，并双击上屏分号，需注销此行
+    # - { accept: period, send: 2, when: has_menu } # 句号次选，已用下面内容替代
+    - { accept: Release+period, send: period, when: composing }
+    - { accept: dollar, send: 2, when: composing }
+    - { accept: Release+dollar, send: period, when: composing }
+    # - { accept: comma, send: 2, when: has_menu } # 逗号次选
+    - { accept: Release+comma, send: comma, when: composing }
+    - { accept: bar, send: 2, when: composing }
+    - { accept: Release+bar, send: comma, when: composing }
 
-    - {accept: "Tab", send: Escape, when: composing}
-    - {accept: "Caps_Lock", send: Escape, when: composing} 
-    - {accept: "Shift_R", send: Escape, when: composing}
-    - {accept: "Shift+space", toggle: full_shape, when: always} # 切换全半角
-    # - {accept: "Control+j", toggle: simplification, when: always} # 切换简繁
-    - {accept: "Control+period", toggle: ascii_punct, when: always} # 切换中英标点
-    # - {accept: "Control+m", select: .next, when: always} # 切换方案
+    - { accept: "Tab", send: Escape, when: composing }
+    - { accept: "Caps_Lock", send: Escape, when: composing }
+    - { accept: "Shift_R", send: Escape, when: composing }
+    - { accept: "Shift+space", toggle: full_shape, when: always } # 切换全半角
+    # - { accept: "Control+j", toggle: simplification, when: always } # 切换简繁
+    - { accept: "Control+period", toggle: ascii_punct, when: always } # 切换中英标点
+    # - { accept: "Control+m", select: .next, when: always } # 切换方案
 
 recognizer:
   import_preset: default
@@ -157,4 +157,3 @@ menu:
 
 style:
   horizontal: true # 竖排为 false
-
