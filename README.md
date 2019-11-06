@@ -13,9 +13,10 @@ fcitx-rime 的小鹤音形挂接文件。
 ## 调整/特性
 
 + 调整默认方案为 flypyplus
-+ 调整 flypy 和 flypyplus 方案默认使用繁体
-+ 调整 flypy 和 flypyplus 方案只能使用中文
-+ 使用 RIME 默认的 punctuator
++ 调整 flypy 和 flypyplus 方案只使用中文
++ 调整 flypy 和 flypyplus 方案默認爲繁体
++ 改回 RIME 默认的 Punctuator
++ 改回 RIME 默认的 Key Binder
 
 + 配置文件结构遵守 Linux 约定俗成的配置风格
 + 统一配置文件中注释与空行的风格 (不能逼死强迫症)
@@ -30,4 +31,4 @@ fcitx-rime 的小鹤音形挂接文件。
 
 **注意：**
 
-可能仅适用于 fcitx-rime。
+可能只适用于 fcitx-rime。

@@ -21,7 +21,7 @@ switches:
     # states: [ 半角, 全角 ]
     reset: 0
   - name: simplification
-    # states: [ 简, 繁 ]
+    states: [ 简, 繁 ]
     reset: 1
   - name: ascii_punct
     # states: [ 。，, ．， ]
