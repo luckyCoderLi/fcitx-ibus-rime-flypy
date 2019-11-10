@@ -21,15 +21,15 @@ switches:
     # states: [ 半角, 全角 ]
     reset: 0
   - name: simplification
-    states: [ 简, 繁 ]
-    reset: 1
+    # states: [ 简, 繁 ]
+    reset: 0
   - name: ascii_punct
     # states: [ 。，, ．， ]
     reset: 0
 
 engine:
   processors:
-    # - ascii_composer
+    - ascii_composer
     - recognizer
     - key_binder
     - speller

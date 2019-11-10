@@ -196,12 +196,12 @@ patch:
       Control_R: noop
       Eisu_toggle: clear
       # Shift_L: inline_ascii # 有编码时清除编码并进入英文状态
-      # Shift_L: commit_code # 有编码时上屏英文并转英文状态
+      Shift_L: commit_code # 有编码时上屏英文并转英文状态
       # Shift_L: commit_text
       # Shift_L: Shift_R
-      Shift_L: noop
+      # Shift_L: noop
       # Shift_R: inline_ascii # 有编码时清除编码并进入英文状态
-      # Shift_R: commit_code # 有编码时上屏英文并转英文状态
+      Shift_R: commit_code # 有编码时上屏英文并转英文状态
       # Shift_R: commit_text
       # Shift_R: Shift_L
-      Shift_R: noop
+      # Shift_R: noop
